@@ -29,9 +29,7 @@ Add a Bash function for `git` alias command inside your `.bash_aliases` file:
 ```bash
 git() {
 	command git "${@}"
-	local STAT="${?}"
-
-	[[ "${STAT}" -eq 0 ]] || return
+	[[ "${?}" -eq 0 ]] || return
 
 	local COUNT=$(command git rev-list HEAD --count 2>/dev/null)
 	local HASH=$(printf "%07d" "${COUNT}")
