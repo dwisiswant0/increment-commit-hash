@@ -4,6 +4,8 @@ Auto replaces commit hash prefix incrementally with lucky-commit by hooking post
 
 ![increment-commit-hash](https://user-images.githubusercontent.com/25837540/125177531-cb189880-e206-11eb-8239-d0c13b35bb93.png)
 
+> See all demonstrations in this repository's [commit history](https://github.com/dwisiswant0/increment-commit-hash/commits/master).
+
 ## Installation
 
 In order for this scenario to work, [lucky_commit](https://github.com/not-an-aardvark/lucky-commit) is required to be installed on your machine.
@@ -20,9 +22,9 @@ This will add a post-commit hook for your git project. So every time you commit 
 
 ### Global
 
-Global means it applies to all your git projects and to install it you have to do-it-yourself (DIY) and of course at your own risk too!
+Global means it applies to all your git projects and to install it you have to do-it-yourself (DIY) manually.
 
-Add alias for `git` command inside your `.bash_aliases` file:
+Add a Bash function for `git` alias command inside your `.bash_aliases` file:
 
 ```bash
 git() {
@@ -38,6 +40,18 @@ git() {
 }
 ```
 
-In order for the alias to be triggered when you run a `git` command, you need to restart the terminal or evaluate directly with `source $HOME/.bash_aliases` command.
+For the alias to trigger when you run `git` command, you need to either restart the terminal or evaluate directly with:
 
-After that, the `lucky_commit` command will run in any git project w/o having to add post-commit hooks in your projects 1-by-1.
+```bash
+$ source $HOME/.bash_aliases
+```
+
+After that, the `lucky_commit` command will be executed in any git project after git `commit` subcommand w/o having to add post-commit hooks in your projects 1-by-1.
+
+**Uninstalling**
+
+To delete that alias, simply remove those `git` function from `.bash_aliases` file and restart your terminal session or unaliasing with:
+
+```bash
+$ unalias git
+```
