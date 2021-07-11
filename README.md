@@ -15,7 +15,7 @@ In order for this scenario to work, [lucky_commit](https://github.com/not-an-aar
 To set up automatically in your local project:
 
 ```bash
-$ curl -sL https://github.com/dwisiswant0/increment-commit-hash/raw/master/setup.sh | sh
+$ curl -sL https://github.com/dwisiswant0/increment-commit-hash/raw/master/setup.sh | bash
 ```
 
 This will add a post-commit hook for your git project. So every time you commit something, `lucky_commit` will run after it.
